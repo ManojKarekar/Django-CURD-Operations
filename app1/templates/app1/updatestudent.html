@@ -1,0 +1,17 @@
+
+{% extends "app1/base.html" %}
+{% block content %}
+
+ <div class="rwo">
+     <div class="col-sm-8 offset-2">
+         <h5 class="alert alert-info  my-3">Update Student information</h5>
+        <form action="{% url 'addData' %}" method="post">
+            {% csrf_token %}
+
+            {{form.as_p}}
+            <button type="submit" class="btn btn-success">Update</button>
+            <a href="{% url 'addData' %}" class="btn btn-info">Home</a>
+        </form>
+     </div>
+ </div>
+{% endblock content %}
